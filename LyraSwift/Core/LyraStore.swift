@@ -1,12 +1,13 @@
 //
-//  LyraAction.swift
+//  LyraStore.swift
 //  LyraSwift
 //
 //  Created by Tyler@work on 2021/6/26.
 //  Copyright © 2021 LyraSwift. All rights reserved.
 //
 
-import ReSwift
+import Foundation
 
-/// 
-public protocol LyraAction: Action {}
+public class LyraStore {
+    static let G = LyraStore()
+}
