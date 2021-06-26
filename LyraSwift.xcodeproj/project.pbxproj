@@ -1,0 +1,1196 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		028A5F8026872AEA00EF47BC /* LyraSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028A5F7626872AEA00EF47BC /* LyraSwift.framework */; };
+		028A5F8526872AEA00EF47BC /* LyraSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028A5F8426872AEA00EF47BC /* LyraSwiftTests.swift */; };
+		028A5F8726872AEA00EF47BC /* LyraSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 028A5F7926872AEA00EF47BC /* LyraSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		028A5FA926872C1B00EF47BC /* LyraSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028A5FA026872C1A00EF47BC /* LyraSwift.framework */; };
+		028A5FC526872C3C00EF47BC /* LyraSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028A5FBC26872C3C00EF47BC /* LyraSwift.framework */; };
+		028A5FE126872C4D00EF47BC /* LyraSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028A5FD826872C4C00EF47BC /* LyraSwift.framework */; };
+		028A5FF126872C8600EF47BC /* ReSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028A5FF026872C8600EF47BC /* ReSwift.xcframework */; };
+		028A5FF626872D2200EF47BC /* LyraAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028A5FF526872D2200EF47BC /* LyraAction.swift */; };
+		028A5FF726872D2200EF47BC /* LyraAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028A5FF526872D2200EF47BC /* LyraAction.swift */; };
+		028A5FF826872D2200EF47BC /* LyraAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028A5FF526872D2200EF47BC /* LyraAction.swift */; };
+		028A600126872E0900EF47BC /* ReSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028A5FF026872C8600EF47BC /* ReSwift.xcframework */; };
+		028A600226872E0A00EF47BC /* ReSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028A5FF026872C8600EF47BC /* ReSwift.xcframework */; };
+		028A600326872E0C00EF47BC /* ReSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028A5FF026872C8600EF47BC /* ReSwift.xcframework */; };
+		028A6004268730D400EF47BC /* LyraAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028A5FF526872D2200EF47BC /* LyraAction.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		028A5F8126872AEA00EF47BC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 028A5F6D26872AEA00EF47BC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 028A5F7526872AEA00EF47BC;
+			remoteInfo = LyraSwift;
+		};
+		028A5FAA26872C1B00EF47BC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 028A5F6D26872AEA00EF47BC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 028A5F9F26872C1A00EF47BC;
+			remoteInfo = "LyraSwift-macOS";
+		};
+		028A5FC626872C3C00EF47BC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 028A5F6D26872AEA00EF47BC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 028A5FBB26872C3C00EF47BC;
+			remoteInfo = "LyraSwift-watchOS";
+		};
+		028A5FE226872C4D00EF47BC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 028A5F6D26872AEA00EF47BC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 028A5FD726872C4C00EF47BC;
+			remoteInfo = "LyraSwift-tvOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		028A5F7626872AEA00EF47BC /* LyraSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LyraSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		028A5F7926872AEA00EF47BC /* LyraSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LyraSwift.h; sourceTree = "<group>"; };
+		028A5F7A26872AEA00EF47BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		028A5F7F26872AEA00EF47BC /* LyraSwift-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LyraSwift-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		028A5F8426872AEA00EF47BC /* LyraSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyraSwiftTests.swift; sourceTree = "<group>"; };
+		028A5F8626872AEA00EF47BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		028A5FA026872C1A00EF47BC /* LyraSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LyraSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		028A5FA826872C1B00EF47BC /* LyraSwift-macOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LyraSwift-macOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		028A5FBC26872C3C00EF47BC /* LyraSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LyraSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		028A5FC426872C3C00EF47BC /* LyraSwift-watchOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LyraSwift-watchOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		028A5FD826872C4C00EF47BC /* LyraSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LyraSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		028A5FE026872C4D00EF47BC /* LyraSwift-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LyraSwift-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		028A5FF026872C8600EF47BC /* ReSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = ReSwift.xcframework; path = Carthage/Build/ReSwift.xcframework; sourceTree = "<group>"; };
+		028A5FF526872D2200EF47BC /* LyraAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyraAction.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		028A5F7326872AEA00EF47BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				028A5FF126872C8600EF47BC /* ReSwift.xcframework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		028A5F7C26872AEA00EF47BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				028A5F8026872AEA00EF47BC /* LyraSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		028A5F9D26872C1A00EF47BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				028A600126872E0900EF47BC /* ReSwift.xcframework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		028A5FA526872C1A00EF47BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				028A5FA926872C1B00EF47BC /* LyraSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		028A5FB926872C3C00EF47BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				028A600226872E0A00EF47BC /* ReSwift.xcframework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		028A5FC126872C3C00EF47BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				028A5FC526872C3C00EF47BC /* LyraSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		028A5FD526872C4C00EF47BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				028A600326872E0C00EF47BC /* ReSwift.xcframework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		028A5FDD26872C4D00EF47BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				028A5FE126872C4D00EF47BC /* LyraSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		028A5F6C26872AEA00EF47BC = {
+			isa = PBXGroup;
+			children = (
+				028A5F7826872AEA00EF47BC /* LyraSwift */,
+				028A5F8326872AEA00EF47BC /* LyraSwiftTests */,
+				028A5F7726872AEA00EF47BC /* Products */,
+				028A5FEF26872C8600EF47BC /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		028A5F7726872AEA00EF47BC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				028A5F7626872AEA00EF47BC /* LyraSwift.framework */,
+				028A5F7F26872AEA00EF47BC /* LyraSwift-iOSTests.xctest */,
+				028A5FA026872C1A00EF47BC /* LyraSwift.framework */,
+				028A5FA826872C1B00EF47BC /* LyraSwift-macOSTests.xctest */,
+				028A5FBC26872C3C00EF47BC /* LyraSwift.framework */,
+				028A5FC426872C3C00EF47BC /* LyraSwift-watchOSTests.xctest */,
+				028A5FD826872C4C00EF47BC /* LyraSwift.framework */,
+				028A5FE026872C4D00EF47BC /* LyraSwift-tvOSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		028A5F7826872AEA00EF47BC /* LyraSwift */ = {
+			isa = PBXGroup;
+			children = (
+				028A5FF426872CA200EF47BC /* Core */,
+				028A5F7926872AEA00EF47BC /* LyraSwift.h */,
+				028A5F7A26872AEA00EF47BC /* Info.plist */,
+			);
+			path = LyraSwift;
+			sourceTree = "<group>";
+		};
+		028A5F8326872AEA00EF47BC /* LyraSwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				028A5F8426872AEA00EF47BC /* LyraSwiftTests.swift */,
+				028A5F8626872AEA00EF47BC /* Info.plist */,
+			);
+			path = LyraSwiftTests;
+			sourceTree = "<group>";
+		};
+		028A5FEF26872C8600EF47BC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				028A5FF026872C8600EF47BC /* ReSwift.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		028A5FF426872CA200EF47BC /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				028A5FF526872D2200EF47BC /* LyraAction.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		028A5F7126872AEA00EF47BC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				028A5F8726872AEA00EF47BC /* LyraSwift.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		028A5F9B26872C1A00EF47BC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		028A5FB726872C3C00EF47BC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		028A5FD326872C4C00EF47BC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		028A5F7526872AEA00EF47BC /* LyraSwift-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 028A5F8A26872AEA00EF47BC /* Build configuration list for PBXNativeTarget "LyraSwift-iOS" */;
+			buildPhases = (
+				028A5F7126872AEA00EF47BC /* Headers */,
+				028A5F7226872AEA00EF47BC /* Sources */,
+				028A5F7326872AEA00EF47BC /* Frameworks */,
+				028A5F7426872AEA00EF47BC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "LyraSwift-iOS";
+			productName = LyraSwift;
+			productReference = 028A5F7626872AEA00EF47BC /* LyraSwift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		028A5F7E26872AEA00EF47BC /* LyraSwift-iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 028A5F8D26872AEA00EF47BC /* Build configuration list for PBXNativeTarget "LyraSwift-iOSTests" */;
+			buildPhases = (
+				028A5F7B26872AEA00EF47BC /* Sources */,
+				028A5F7C26872AEA00EF47BC /* Frameworks */,
+				028A5F7D26872AEA00EF47BC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				028A5F8226872AEA00EF47BC /* PBXTargetDependency */,
+			);
+			name = "LyraSwift-iOSTests";
+			productName = LyraSwiftTests;
+			productReference = 028A5F7F26872AEA00EF47BC /* LyraSwift-iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		028A5F9F26872C1A00EF47BC /* LyraSwift-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 028A5FB126872C1B00EF47BC /* Build configuration list for PBXNativeTarget "LyraSwift-macOS" */;
+			buildPhases = (
+				028A5F9B26872C1A00EF47BC /* Headers */,
+				028A5F9C26872C1A00EF47BC /* Sources */,
+				028A5F9D26872C1A00EF47BC /* Frameworks */,
+				028A5F9E26872C1A00EF47BC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "LyraSwift-macOS";
+			productName = "LyraSwift-macOS";
+			productReference = 028A5FA026872C1A00EF47BC /* LyraSwift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		028A5FA726872C1A00EF47BC /* LyraSwift-macOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 028A5FB426872C1B00EF47BC /* Build configuration list for PBXNativeTarget "LyraSwift-macOSTests" */;
+			buildPhases = (
+				028A5FA426872C1A00EF47BC /* Sources */,
+				028A5FA526872C1A00EF47BC /* Frameworks */,
+				028A5FA626872C1A00EF47BC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				028A5FAB26872C1B00EF47BC /* PBXTargetDependency */,
+			);
+			name = "LyraSwift-macOSTests";
+			productName = "LyraSwift-macOSTests";
+			productReference = 028A5FA826872C1B00EF47BC /* LyraSwift-macOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		028A5FBB26872C3C00EF47BC /* LyraSwift-watchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 028A5FCD26872C3C00EF47BC /* Build configuration list for PBXNativeTarget "LyraSwift-watchOS" */;
+			buildPhases = (
+				028A5FB726872C3C00EF47BC /* Headers */,
+				028A5FB826872C3C00EF47BC /* Sources */,
+				028A5FB926872C3C00EF47BC /* Frameworks */,
+				028A5FBA26872C3C00EF47BC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "LyraSwift-watchOS";
+			productName = "LyraSwift-watchOS";
+			productReference = 028A5FBC26872C3C00EF47BC /* LyraSwift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		028A5FC326872C3C00EF47BC /* LyraSwift-watchOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 028A5FD026872C3C00EF47BC /* Build configuration list for PBXNativeTarget "LyraSwift-watchOSTests" */;
+			buildPhases = (
+				028A5FC026872C3C00EF47BC /* Sources */,
+				028A5FC126872C3C00EF47BC /* Frameworks */,
+				028A5FC226872C3C00EF47BC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				028A5FC726872C3C00EF47BC /* PBXTargetDependency */,
+			);
+			name = "LyraSwift-watchOSTests";
+			productName = "LyraSwift-watchOSTests";
+			productReference = 028A5FC426872C3C00EF47BC /* LyraSwift-watchOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		028A5FD726872C4C00EF47BC /* LyraSwift-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 028A5FE926872C4D00EF47BC /* Build configuration list for PBXNativeTarget "LyraSwift-tvOS" */;
+			buildPhases = (
+				028A5FD326872C4C00EF47BC /* Headers */,
+				028A5FD426872C4C00EF47BC /* Sources */,
+				028A5FD526872C4C00EF47BC /* Frameworks */,
+				028A5FD626872C4C00EF47BC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "LyraSwift-tvOS";
+			productName = "LyraSwift-tvOS";
+			productReference = 028A5FD826872C4C00EF47BC /* LyraSwift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		028A5FDF26872C4D00EF47BC /* LyraSwift-tvOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 028A5FEC26872C4D00EF47BC /* Build configuration list for PBXNativeTarget "LyraSwift-tvOSTests" */;
+			buildPhases = (
+				028A5FDC26872C4D00EF47BC /* Sources */,
+				028A5FDD26872C4D00EF47BC /* Frameworks */,
+				028A5FDE26872C4D00EF47BC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				028A5FE326872C4D00EF47BC /* PBXTargetDependency */,
+			);
+			name = "LyraSwift-tvOSTests";
+			productName = "LyraSwift-tvOSTests";
+			productReference = 028A5FE026872C4D00EF47BC /* LyraSwift-tvOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		028A5F6D26872AEA00EF47BC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				ORGANIZATIONNAME = LyraSwift;
+				TargetAttributes = {
+					028A5F7526872AEA00EF47BC = {
+						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1250;
+					};
+					028A5F7E26872AEA00EF47BC = {
+						CreatedOnToolsVersion = 12.5;
+					};
+					028A5F9F26872C1A00EF47BC = {
+						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1250;
+					};
+					028A5FA726872C1A00EF47BC = {
+						CreatedOnToolsVersion = 12.5;
+					};
+					028A5FBB26872C3C00EF47BC = {
+						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1250;
+					};
+					028A5FC326872C3C00EF47BC = {
+						CreatedOnToolsVersion = 12.5;
+					};
+					028A5FD726872C4C00EF47BC = {
+						CreatedOnToolsVersion = 12.5;
+					};
+					028A5FDF26872C4D00EF47BC = {
+						CreatedOnToolsVersion = 12.5;
+					};
+				};
+			};
+			buildConfigurationList = 028A5F7026872AEA00EF47BC /* Build configuration list for PBXProject "LyraSwift" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 028A5F6C26872AEA00EF47BC;
+			productRefGroup = 028A5F7726872AEA00EF47BC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				028A5F7526872AEA00EF47BC /* LyraSwift-iOS */,
+				028A5F7E26872AEA00EF47BC /* LyraSwift-iOSTests */,
+				028A5F9F26872C1A00EF47BC /* LyraSwift-macOS */,
+				028A5FA726872C1A00EF47BC /* LyraSwift-macOSTests */,
+				028A5FBB26872C3C00EF47BC /* LyraSwift-watchOS */,
+				028A5FC326872C3C00EF47BC /* LyraSwift-watchOSTests */,
+				028A5FD726872C4C00EF47BC /* LyraSwift-tvOS */,
+				028A5FDF26872C4D00EF47BC /* LyraSwift-tvOSTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		028A5F7426872AEA00EF47BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		028A5F7D26872AEA00EF47BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		028A5F9E26872C1A00EF47BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		028A5FA626872C1A00EF47BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		028A5FBA26872C3C00EF47BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		028A5FC226872C3C00EF47BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		028A5FD626872C4C00EF47BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		028A5FDE26872C4D00EF47BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		028A5F7226872AEA00EF47BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				028A5FF626872D2200EF47BC /* LyraAction.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		028A5F7B26872AEA00EF47BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				028A5F8526872AEA00EF47BC /* LyraSwiftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		028A5F9C26872C1A00EF47BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				028A5FF726872D2200EF47BC /* LyraAction.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		028A5FA426872C1A00EF47BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		028A5FB826872C3C00EF47BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				028A5FF826872D2200EF47BC /* LyraAction.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		028A5FC026872C3C00EF47BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		028A5FD426872C4C00EF47BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				028A6004268730D400EF47BC /* LyraAction.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		028A5FDC26872C4D00EF47BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		028A5F8226872AEA00EF47BC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 028A5F7526872AEA00EF47BC /* LyraSwift-iOS */;
+			targetProxy = 028A5F8126872AEA00EF47BC /* PBXContainerItemProxy */;
+		};
+		028A5FAB26872C1B00EF47BC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 028A5F9F26872C1A00EF47BC /* LyraSwift-macOS */;
+			targetProxy = 028A5FAA26872C1B00EF47BC /* PBXContainerItemProxy */;
+		};
+		028A5FC726872C3C00EF47BC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 028A5FBB26872C3C00EF47BC /* LyraSwift-watchOS */;
+			targetProxy = 028A5FC626872C3C00EF47BC /* PBXContainerItemProxy */;
+		};
+		028A5FE326872C4D00EF47BC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 028A5FD726872C4C00EF47BC /* LyraSwift-tvOS */;
+			targetProxy = 028A5FE226872C4D00EF47BC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		028A5F8826872AEA00EF47BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		028A5F8926872AEA00EF47BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		028A5F8B26872AEA00EF47BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = FH3937YYAH;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = LyraSwift/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TylerLam.LyraSwift;
+				PRODUCT_NAME = LyraSwift;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		028A5F8C26872AEA00EF47BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = FH3937YYAH;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = LyraSwift/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TylerLam.LyraSwift;
+				PRODUCT_NAME = LyraSwift;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		028A5F8E26872AEA00EF47BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FH3937YYAH;
+				INFOPLIST_FILE = LyraSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.TylerLam.LyraSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		028A5F8F26872AEA00EF47BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FH3937YYAH;
+				INFOPLIST_FILE = LyraSwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.TylerLam.LyraSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		028A5FB226872C1B00EF47BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = FH3937YYAH;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = LyraSwift/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TylerLam.LyraSwift;
+				PRODUCT_NAME = LyraSwift;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		028A5FB326872C1B00EF47BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = FH3937YYAH;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = LyraSwift/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TylerLam.LyraSwift;
+				PRODUCT_NAME = LyraSwift;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		028A5FB526872C1B00EF47BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = FH3937YYAH;
+				INFOPLIST_FILE = "LyraSwift-macOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.TylerLam.LyraSwift-macOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		028A5FB626872C1B00EF47BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = FH3937YYAH;
+				INFOPLIST_FILE = "LyraSwift-macOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.TylerLam.LyraSwift-macOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		028A5FCE26872C3C00EF47BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = FH3937YYAH;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = LyraSwift/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.TylerLam.LyraSwift;
+				PRODUCT_NAME = LyraSwift;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		028A5FCF26872C3C00EF47BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = FH3937YYAH;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = LyraSwift/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.TylerLam.LyraSwift;
+				PRODUCT_NAME = LyraSwift;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		028A5FD126872C3C00EF47BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FH3937YYAH;
+				INFOPLIST_FILE = "LyraSwift-watchOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.TylerLam.LyraSwift-watchOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Debug;
+		};
+		028A5FD226872C3C00EF47BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FH3937YYAH;
+				INFOPLIST_FILE = "LyraSwift-watchOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.TylerLam.LyraSwift-watchOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Release;
+		};
+		028A5FEA26872C4D00EF47BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = FH3937YYAH;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = LyraSwift/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.TylerLam.LyraSwift;
+				PRODUCT_NAME = LyraSwift;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		028A5FEB26872C4D00EF47BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = FH3937YYAH;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = LyraSwift/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.TylerLam.LyraSwift;
+				PRODUCT_NAME = LyraSwift;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Release;
+		};
+		028A5FED26872C4D00EF47BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FH3937YYAH;
+				INFOPLIST_FILE = "LyraSwift-tvOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.TylerLam.LyraSwift-tvOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 14.5;
+			};
+			name = Debug;
+		};
+		028A5FEE26872C4D00EF47BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FH3937YYAH;
+				INFOPLIST_FILE = "LyraSwift-tvOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.TylerLam.LyraSwift-tvOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 14.5;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		028A5F7026872AEA00EF47BC /* Build configuration list for PBXProject "LyraSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				028A5F8826872AEA00EF47BC /* Debug */,
+				028A5F8926872AEA00EF47BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		028A5F8A26872AEA00EF47BC /* Build configuration list for PBXNativeTarget "LyraSwift-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				028A5F8B26872AEA00EF47BC /* Debug */,
+				028A5F8C26872AEA00EF47BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		028A5F8D26872AEA00EF47BC /* Build configuration list for PBXNativeTarget "LyraSwift-iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				028A5F8E26872AEA00EF47BC /* Debug */,
+				028A5F8F26872AEA00EF47BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		028A5FB126872C1B00EF47BC /* Build configuration list for PBXNativeTarget "LyraSwift-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				028A5FB226872C1B00EF47BC /* Debug */,
+				028A5FB326872C1B00EF47BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		028A5FB426872C1B00EF47BC /* Build configuration list for PBXNativeTarget "LyraSwift-macOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				028A5FB526872C1B00EF47BC /* Debug */,
+				028A5FB626872C1B00EF47BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		028A5FCD26872C3C00EF47BC /* Build configuration list for PBXNativeTarget "LyraSwift-watchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				028A5FCE26872C3C00EF47BC /* Debug */,
+				028A5FCF26872C3C00EF47BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		028A5FD026872C3C00EF47BC /* Build configuration list for PBXNativeTarget "LyraSwift-watchOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				028A5FD126872C3C00EF47BC /* Debug */,
+				028A5FD226872C3C00EF47BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		028A5FE926872C4D00EF47BC /* Build configuration list for PBXNativeTarget "LyraSwift-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				028A5FEA26872C4D00EF47BC /* Debug */,
+				028A5FEB26872C4D00EF47BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		028A5FEC26872C4D00EF47BC /* Build configuration list for PBXNativeTarget "LyraSwift-tvOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				028A5FED26872C4D00EF47BC /* Debug */,
+				028A5FEE26872C4D00EF47BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 028A5F6D26872AEA00EF47BC /* Project object */;
+}
