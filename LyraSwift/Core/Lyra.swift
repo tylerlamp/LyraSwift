@@ -25,7 +25,10 @@ public class Subscription {
     }
 }
 
-/// TODO: Comment
+
+/// ` What's Lyra`
+///   
+///
 public class Lyra {
     /// Global instance
     fileprivate static let G = Lyra()
@@ -209,18 +212,28 @@ public class LyraDispatcher<M: LyraModule> {
             .dispatch(closure(M.Actions.self))
     }
     
+    /// Return the `Observer` if the `subscription` that satisfies the
+    /// given `subscriber` exist.
+    ///
+    /// - Parameter subscriber: the given subscriber
+    /// - Returns: Observer
+    public static func observe(_ subscriber: AnyObject) -> M.Observer?  {
+        guard Lyra.contains(module: M.self, of: subscriber) else {
+            return nil
+        }
+        return Lyra.G.observer(of: M.self, for: subscriber)
+    }
+    
     /// Return an `observer` instance from the module (`M`) of subscription that `subscriber` subscribe.
     ///
     /// - Parameter subscriber: the given subscriber
     /// - Returns: Return the `observer` that only belong the `subscriber`
-    public static func subscribe(_ subscriber: AnyObject) -> M.Observer {
-        var observer: M.Observer!
-        if Lyra.contains(module: M.self, of: subscriber) {
-            observer = Lyra.G.observer(of: M.self, for: subscriber)
-        } else {
-            observer = subscribeNewModule(subscriber)
+    @discardableResult
+    public static func subscribe(_ subscriber: AnyObject) -> ObserverBox<M> {
+        if !Lyra.contains(module: M.self, of: subscriber) {
+            subscribeNewModule(subscriber)
         }
-        return observer
+        return .init(subscriber: subscriber)
     }
     
     /// Unsubscibe the module(`M`) from `subscriber`
@@ -230,11 +243,10 @@ public class LyraDispatcher<M: LyraModule> {
         Lyra.G.unsubscribe(subscriber, for: M.self)
     }
     
-    private static func subscribeNewModule(_ subscriber: AnyObject) -> M.Observer {
+    private static func subscribeNewModule(_ subscriber: AnyObject) {
         let observer = M.Observer()
         Lyra.G.subscribe(subscriber, for: M.self, use: observer)
         observer.subscriber = subscriber
-        return observer
     }
     
     /// Find all the Observer(`M.Observer`) that belong to the module
@@ -268,5 +280,18 @@ public class LyraDispatcher<M: LyraModule> {
             /// peform
             handler(observer)
         }
+    }
+}
+
+public class ObserverBox<M: LyraModule> {
+    weak var subscriber: AnyObject?
+    public var observer: M.Observer? {
+        guard let _ = subscriber else {
+            return nil
+        }
+        return Lyra.G.observer(of: M.self, for: subscriber!)
+    }
+    init(subscriber: AnyObject?) {
+        self.subscriber = subscriber
     }
 }

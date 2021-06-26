@@ -10,20 +10,59 @@ import ReSwift
 public typealias LyraModuleIdentify = String
 public typealias LyraObserverSubscriber = LyraObserver & StoreSubscriber
 
-//TODO: comment
+
+/// When you've defined your `StateType`; `LyraAction`; `LyraObserver`
+/// Now you can assemble them to be a `LyraModule`, like this easy way:
+///
+/// ```
+///  enum SearchModule: LyraModule {
+///    typealias StateType = SearchState
+///    typealias Actions = SearchAction
+///    typealias Observer = SearchObserver
+///
+///    static func reducer(_ action: Action, _ state: SearchState?) -> SearchState {
+///         // put your code of ReSwift's reducer in it
+///    }
+///  }
+/// ```
+/// And then register the module to the `LyraStore`:
+/// ```
+///     extension LyraStore {
+///         var search: SearchModule.Type { SearchModule.self }
+///     }
+/// ```
+///
+/// finaly, you can call the module anywhere like that:
+///
+/// ```
+///     // subscibe
+///     Lyra.module(\.search).subscribe(self)
+///
+///     // dispatch action
+///     Lyra.module(\.search).action { actions in
+///         actions.updateKeyword("Hello world!")
+///     }
+///
+///     // observe state
+///     Lyra.module(\.search)
+///         .observe(self)
+///         .keyword  { newKeyword in
+///             print(newKeyword) // Hello world!
+///         }
+///
+///     // unsubscibe (don't forget it)
+///     Lyra.module(\.search).unsubscribe(self)
+/// ```
+///
 public protocol LyraModule {
-    
     associatedtype StateType
-    //TODO: comment
     associatedtype Actions: LyraAction
-    //TODO: comment
     associatedtype Observer: LyraObserverSubscriber
-    // TODO: comment
     static func reducer(_ action: Action, _ state: StateType?) -> StateType
 }
 
+//MARK: - Identification
 extension LyraModule {
-    
     static var identify: LyraModuleIdentify {
         String(describing: Self.self)
     }

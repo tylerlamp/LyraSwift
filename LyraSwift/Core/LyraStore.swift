@@ -8,6 +8,18 @@
 
 import Foundation
 
-public class LyraStore {
-    static let G = LyraStore()
-}
+/// When you finish your module building
+/// you should register to the `LyraStore`, like that:
+/// ```
+///  extension LyraStore {
+///     var someModule: SomeModule.type { SomeModule.self }
+///  }
+/// ```
+/// you can write it in anywhere
+///
+/// then just easily to call it:
+/// ```
+///     Lyra.module(\.someModule)
+/// ```
+///
+public struct LyraStore {}

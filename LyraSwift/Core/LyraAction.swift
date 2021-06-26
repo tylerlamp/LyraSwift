@@ -28,7 +28,7 @@ import ReSwift
 /// ```
 /// extension SomActionEnum {
 ///     struct SomeActionStruct: LyraAction {
-///
+///         // some code
 ///     }
 /// }
 /// ```
