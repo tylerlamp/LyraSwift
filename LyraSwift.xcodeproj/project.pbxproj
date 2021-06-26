@@ -187,7 +187,6 @@
 		028A5F7826872AEA00EF47BC /* LyraSwift */ = {
 			isa = PBXGroup;
 			children = (
-				028A603626877CD400EF47BC /* Global */,
 				028A5FF426872CA200EF47BC /* Core */,
 				028A5F7926872AEA00EF47BC /* LyraSwift.h */,
 				028A5F7A26872AEA00EF47BC /* Info.plist */,
@@ -222,13 +221,6 @@
 				028A60152687396000EF47BC /* Lyra.swift */,
 			);
 			path = Core;
-			sourceTree = "<group>";
-		};
-		028A603626877CD400EF47BC /* Global */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Global;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

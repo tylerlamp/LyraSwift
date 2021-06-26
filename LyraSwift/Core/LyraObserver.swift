@@ -57,7 +57,11 @@ import ReSwift
 ///
 open class LyraObserver {
     /// This `Observer` actrually owner
-    weak var subscriber: AnyObject?
+    weak var subscriber: AnySubscriber?
+    /// The identify of Subscriber
+    var subscriberIdentifier: SubscriberIdentifier!
+    /// The identify of module
+    var moduleIdentify: LyraModuleIdentify!
     
     /// get a descriptive identify of current class
     static public var identify: String {
@@ -65,4 +69,25 @@ open class LyraObserver {
     }
     
     required public init() {}
+    
+    /// auto cleaner the unuseable subscription
+    /// if you need this function on, put this
+    /// function on the top of the body of function `newState(state:)`:
+    ///
+    /// ```
+    ///     func newState(state: StateType) {
+    ///         autoCleaner(state)
+    ///         /// your code
+    ///     }
+    /// ```
+    ///
+    ///
+    /// it will clean the subscription, when `subscriber ` is `nil`
+    /// - Parameter state: the `stateType` (`ReSwift`)
+    public func autoCleaner<S>(state: S) {
+        if subscriber != nil {
+            return
+        }
+        Lyra.G.removeSubscription(subscriberIdentifier, for: moduleIdentify, with: S.self)
+    }
 }

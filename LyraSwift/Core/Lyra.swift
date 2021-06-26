@@ -31,7 +31,7 @@ public class Subscription {
 ///
 public class Lyra {
     /// Global instance
-    fileprivate static let G = Lyra()
+    static let G = Lyra()
     /// Store all the Subscriptions of any modules.
     private(set) var subscriptions: SubscriptionStore = [:]
     /// Store all the store(`ReSwift`)
@@ -72,7 +72,7 @@ public class Lyra {
     ///   - subscriber: the given identifier of subscriber
     /// - Returns:  `true` if the `subscriptions` contains an element that satisfies
     ///   `moduel` and `subscriber`; otherwise, `false`.
-    public static func contains<M: LyraModule>(module: M.Type, of subscriber: ObjectIdentifier) -> Bool {
+    public static func contains<M: LyraModule>(module: M.Type, of subscriber: SubscriberIdentifier) -> Bool {
         Lyra.G.subscriptions[M.identify]?[subscriber] != nil
     }
     
@@ -85,7 +85,7 @@ public class Lyra {
     /// - Returns:  `true` if the `subscriptions` contains an element that satisfies
     ///   `moduel` and `subscriptions`; otherwise, `false`.
     public static func contains<M: LyraModule>(module: M.Type, of subscriber: AnyObject) -> Bool {
-        Self.contains(module: module, of: ObjectIdentifier(subscriber))
+        Self.contains(module: module, of: SubscriberIdentifier(subscriber))
     }
     
     /// Return the subscriptionList of the given `module`
@@ -104,7 +104,7 @@ public class Lyra {
         
         let subscription = Subscription(subscriber: subscriber, observer: observer)
         let mIdentifier = M.identify
-        let sIdentifier = ObjectIdentifier(subscriber)
+        let sIdentifier = SubscriberIdentifier(subscriber)
         /// Update the subscriptions (aka. dictionary)
         if Lyra.contains(module: mIdentifier) {
             Lyra.G.subscriptions[mIdentifier]![sIdentifier] = subscription
@@ -122,7 +122,7 @@ public class Lyra {
     ///   - subscriber: the given  subscriber
     ///   - module: the given module
     func unsubscribe<M: LyraModule>(_ subscriber: AnyObject, for module: M.Type) {
-        Lyra.G.removeSubscription(ObjectIdentifier(subscriber), for: M.self)
+        Lyra.G.removeSubscription(SubscriberIdentifier(subscriber), for: M.self)
     }
     
     /// Add a `Store` (`ReSwift`) to the dictionary,
@@ -149,27 +149,48 @@ public class Lyra {
     /// - Parameters:
     ///   - subscriberIdentifier: ObjectIdentifier of the subscriber
     ///   - module: the given module
-    func removeSubscription<M: LyraModule>(_ subscriberIdentifier: ObjectIdentifier, for module: M.Type) {
-        let module_identifier = M.Observer.identify
-        if let shouldRemove = subscriptions[module_identifier]?.removeValue(forKey: subscriberIdentifier) {
+    func removeSubscription<M: LyraModule>(_ subscriberIdentifier: SubscriberIdentifier, for module: M.Type) {
+        removeSubscription(subscriberIdentifier, for: M.identify, with: M.StateType.self)
+    }
+    
+    /// force remove a subscription of the `identify` that satisfies
+    /// the given subscriberIdentifier which indicating a subscriber.
+    ///
+    /// - Parameters:
+    ///   - subscriberIdentifier: ObjectIdentifier of the subscriber
+    ///   - identify: the given identify
+    ///   - stateType: stateType
+    func removeSubscription<S>(_ subscriberIdentifier: SubscriberIdentifier, for identify: LyraModuleIdentify, with stateType: S.Type) {
+        if let shouldRemove = subscriptions[identify]?.removeValue(forKey: subscriberIdentifier) {
             /// unsubscribe a Store from the ReSwift
             if let observer = shouldRemove.observer {
-                store(of: M.self).unsubscribe(observer as! AnyStoreSubscriber)
+                store(of: identify, with: S.self)?.unsubscribe(observer as! AnyStoreSubscriber)
             }
         }
-        
-        if subscriptions[module_identifier]?.isEmpty ?? true {
-            /// If the `subscriptions` doesn't contain the `module` anymore
-            /// then clear the `subscriptions` and `StoreStore`
-            removeSubscription(for: M.self)
-        }
+        cleanSubscription(for: identify)
     }
     
     /// force remove a subscription of the `module`
     /// - Parameter module: the given module
     func removeSubscription<M: LyraModule>(for module: M.Type) {
-        subscriptions.removeValue(forKey: M.identify)
-        StoreStore.removeValue(forKey: M.identify)
+        removeSubscription(for: M.identify)
+    }
+    
+    /// force remove a subscription of the `identify`
+    /// - Parameter identify: the given identify
+    func removeSubscription(for identify: LyraModuleIdentify) {
+        subscriptions.removeValue(forKey: identify)
+        StoreStore.removeValue(forKey: identify)
+    }
+    
+    /// clean the subscription
+    /// - Parameter identify: identify of module
+    func cleanSubscription(for identify: LyraModuleIdentify) {
+        if subscriptions[identify]?.isEmpty ?? true {
+            /// If the `subscriptions` doesn't contain the `module` anymore
+            /// then clear the `subscriptions` and `StoreStore`
+            removeSubscription(for: identify)
+        }
     }
     
     /// Return a observer(`M.Observer`) that satisfies the given module(`M`)
@@ -180,17 +201,21 @@ public class Lyra {
     /// - Returns:  `true` if the `subscriptions` contains an element that satisfies
     ///   `moduel` and `subscriber`; otherwise, `false`.
     func observer<M: LyraModule>(of module: M.Type, for subscriber: AnyObject) -> M.Observer? {
-        subscriptions[M.identify]?[ObjectIdentifier(subscriber)]?.observer as? M.Observer
+        subscriptions[M.identify]?[SubscriberIdentifier(subscriber)]?.observer as? M.Observer
     }
     
     /// Return a store of the given module(`M`)
     /// - Parameter module: the given module
     /// - Returns: the `Store` of the given module
     func store<M: LyraModule>(of module: M.Type) -> Store<M.StateType> {
-        guard let store = StoreStore[M.identify] else {
+        guard let store = store(of: M.identify, with: M.StateType.self) else {
             return addAStoreIfNeed(M.self)
         }
-        return store as! Store<M.StateType>
+        return store
+    }
+    
+    func store<S>(of identify: LyraModuleIdentify, with stateType: S.Type) -> Store<S>? {
+         StoreStore[identify] as? Store<S>
     }
 }
 
