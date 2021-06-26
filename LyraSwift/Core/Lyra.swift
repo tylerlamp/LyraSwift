@@ -27,9 +27,12 @@ public class Subscription {
 
 /// TODO: Comment
 public class Lyra {
+    /// Global instance
     fileprivate static let G = Lyra()
     /// Store all the Subscriptions of any modules.
     private(set) var subscriptions: SubscriptionStore = [:]
+    /// Store all the store(`ReSwift`)
+    private(set) var StoreStore: [LyraModuleIdentify: AnyObject] = [:]
     
     /// A function for binding a module which you need, then you can do sth. like:
     /// 1. subscribe/unsubcirbe:
@@ -54,7 +57,7 @@ public class Lyra {
     /// - Parameter identify: the given identify
     /// - Returns: `true` if the `subscriptions` contains an element that satisfies
     ///   `identify`; otherwise, `false`.
-    public func contains(module identify: LyraModuleIdentify) -> Bool {
+    public static func contains(module identify: LyraModuleIdentify) -> Bool {
         Lyra.G.subscriptions.contains(where: { $0.key == "\(identify)" })
     }
     
@@ -82,14 +85,12 @@ public class Lyra {
         Self.contains(module: module, of: ObjectIdentifier(subscriber))
     }
     
-    
     /// Return the subscriptionList of the given `module`
     /// - Parameter module: the given `module`
     /// - Returns: return the `SubscriptionList`
-    public func subscriptionList<M: LyraModule>(from module: M.Type) -> SubscriptionList? {
-        Lyra.G.subscriptions[M.identify]
+    func subscriptionList<M: LyraModule>(from module: M.Type) -> SubscriptionList? {
+        subscriptions[M.identify]
     }
-    
     
     /// Create a subscription that `subscriber` subscribe a `module` use the given `observer`
     /// - Parameters:
@@ -99,14 +100,16 @@ public class Lyra {
     func subscribe<M: LyraModule>(_ subscriber: AnyObject, for module: M.Type, use observer: M.Observer) {
         
         let subscription = Subscription(subscriber: subscriber, observer: observer)
-        let mIdentifier = M.Observer.identify
+        let mIdentifier = M.identify
         let sIdentifier = ObjectIdentifier(subscriber)
         /// Update the subscriptions (aka. dictionary)
-        if Lyra.G.contains(module: mIdentifier) {
+        if Lyra.contains(module: mIdentifier) {
             Lyra.G.subscriptions[mIdentifier]![sIdentifier] = subscription
         } else {
             Lyra.G.subscriptions[mIdentifier] = [sIdentifier: subscription]
         }
+        let store = addAStoreIfNeed(M.self) as! Store<M.Observer.StoreSubscriberStateType>
+        store.subscribe(observer)
     }
     
     /// unsubscribe a subscription of the `module` that satisfies
@@ -119,6 +122,24 @@ public class Lyra {
         Lyra.G.removeSubscription(ObjectIdentifier(subscriber), for: M.self)
     }
     
+    /// Add a `Store` (`ReSwift`) to the dictionary,
+    /// then return the `Store`
+    ///
+    /// - Parameter module: the given module
+    /// - Returns: `Store<M.StateType>`
+    @discardableResult
+    private func addAStoreIfNeed<M: LyraModule>(_ module: M.Type) -> Store<M.StateType> {
+        if let store = StoreStore[M.identify]  {
+            return store as! Store<M.StateType>
+        }
+        /// For this moment, the `state` in the init for `Store` always `nil`
+        /// Is it necessity to make it cu
+        /// stomizable?
+        /// Tell me if you have some issues about it (E-Mail: `mayerdev01@gmail.com`)
+        StoreStore[M.identify] = Store<M.StateType>(reducer: M.reducer(_:_:), state: nil)
+        return StoreStore[M.identify] as! Store<M.StateType>
+    }
+    
     /// force remove a subscription of the `module` that satisfies
     /// the given subscriberIdentifier which indicating a subscriber.
     ///
@@ -129,8 +150,23 @@ public class Lyra {
         let module_identifier = M.Observer.identify
         if let shouldRemove = subscriptions[module_identifier]?.removeValue(forKey: subscriberIdentifier) {
             /// unsubscribe a Store from the ReSwift
-            shouldRemove.observer?.ReUnsubscribe()
+            if let observer = shouldRemove.observer {
+                store(of: M.self).unsubscribe(observer as! AnyStoreSubscriber)
+            }
         }
+        
+        if subscriptions[module_identifier]?.isEmpty ?? true {
+            /// If the `subscriptions` doesn't contain the `module` anymore
+            /// then clear the `subscriptions` and `StoreStore`
+            removeSubscription(for: M.self)
+        }
+    }
+    
+    /// force remove a subscription of the `module`
+    /// - Parameter module: the given module
+    func removeSubscription<M: LyraModule>(for module: M.Type) {
+        subscriptions.removeValue(forKey: M.identify)
+        StoreStore.removeValue(forKey: M.identify)
     }
     
     /// Return a observer(`M.Observer`) that satisfies the given module(`M`)
@@ -140,8 +176,18 @@ public class Lyra {
     ///   - subscriber: the given  subscriber
     /// - Returns:  `true` if the `subscriptions` contains an element that satisfies
     ///   `moduel` and `subscriber`; otherwise, `false`.
-    fileprivate static func observer<M: LyraModule>(of module: M.Type, for subscriber: AnyObject) -> M.Observer? {
-        Lyra.G.subscriptions[M.identify]?[ObjectIdentifier(subscriber)]?.observer as? M.Observer
+    func observer<M: LyraModule>(of module: M.Type, for subscriber: AnyObject) -> M.Observer? {
+        subscriptions[M.identify]?[ObjectIdentifier(subscriber)]?.observer as? M.Observer
+    }
+    
+    /// Return a store of the given module(`M`)
+    /// - Parameter module: the given module
+    /// - Returns: the `Store` of the given module
+    func store<M: LyraModule>(of module: M.Type) -> Store<M.StateType> {
+        guard let store = StoreStore[M.identify] else {
+            return addAStoreIfNeed(M.self)
+        }
+        return store as! Store<M.StateType>
     }
 }
 
@@ -151,11 +197,16 @@ public class LyraDispatcher<M: LyraModule> {
     
     /// An convenience way to call actions from module like that:
     /// ```
-    ///     Lyra.module(\.search).action.placeholder("Hello world!")
-    /// ```
+    ///     Lyra.module(\.search).action { actions in
+    ///         actions.placeholder("Hello world!")
+    ///     }
     ///
-    public static var action: M.Action.Type {
-        M.Action.self
+    /// ```
+    /// - Parameter closure:
+    public static func action(_ closure: (M.Actions.Type) -> Action ) {
+        Lyra.G
+            .store(of: M.self)
+            .dispatch(closure(M.Actions.self))
     }
     
     /// Return an `observer` instance from the module (`M`) of subscription that `subscriber` subscribe.
@@ -165,7 +216,7 @@ public class LyraDispatcher<M: LyraModule> {
     public static func subscribe(_ subscriber: AnyObject) -> M.Observer {
         var observer: M.Observer!
         if Lyra.contains(module: M.self, of: subscriber) {
-            observer = Lyra.observer(of: M.self, for: subscriber)
+            observer = Lyra.G.observer(of: M.self, for: subscriber)
         } else {
             observer = subscribeNewModule(subscriber)
         }
@@ -181,7 +232,6 @@ public class LyraDispatcher<M: LyraModule> {
     
     private static func subscribeNewModule(_ subscriber: AnyObject) -> M.Observer {
         let observer = M.Observer()
-        observer.ReSubscribe()
         Lyra.G.subscribe(subscriber, for: M.self, use: observer)
         observer.subscriber = subscriber
         return observer
@@ -206,12 +256,10 @@ public class LyraDispatcher<M: LyraModule> {
         guard let subscription = Lyra.G.subscriptionList(from: M.self) else {
             return
         }
-        
         subscription.forEach {
             guard let observer = $0.value.observer as? M.Observer else {
                 return
             }
-            
             guard let _ = observer.subscriber else {
                 /// Remove the subscription as the `subscriber` is `nil`
                 Lyra.G.removeSubscription($0.key, for: M.self)
@@ -220,9 +268,5 @@ public class LyraDispatcher<M: LyraModule> {
             /// peform
             handler(observer)
         }
-    }
-    
-    public static func action(_ closure: (M.Action.Type) -> Action ) {
-        
     }
 }

@@ -14,13 +14,4 @@ open class LyraObserver {
         String(describing: Self.self)
     }
     required public init() {}
-    
-    open func ReSubscribe() {
-        fatalError("请在子类中重写这个方法")
-    }
-    
-    open func ReUnsubscribe() {
-        fatalError("请在子类中重写这个方法")
-    }
 }
-

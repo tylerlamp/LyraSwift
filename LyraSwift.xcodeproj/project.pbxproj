@@ -21,6 +21,22 @@
 		028A600226872E0A00EF47BC /* ReSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028A5FF026872C8600EF47BC /* ReSwift.xcframework */; };
 		028A600326872E0C00EF47BC /* ReSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 028A5FF026872C8600EF47BC /* ReSwift.xcframework */; };
 		028A6004268730D400EF47BC /* LyraAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028A5FF526872D2200EF47BC /* LyraAction.swift */; };
+		028A6006268734CD00EF47BC /* LyraObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028A6005268734CD00EF47BC /* LyraObserver.swift */; };
+		028A6007268734CD00EF47BC /* LyraObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028A6005268734CD00EF47BC /* LyraObserver.swift */; };
+		028A6008268734CD00EF47BC /* LyraObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028A6005268734CD00EF47BC /* LyraObserver.swift */; };
+		028A6009268734CD00EF47BC /* LyraObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028A6005268734CD00EF47BC /* LyraObserver.swift */; };
+		028A600C268734E800EF47BC /* LyraModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028A600B268734E800EF47BC /* LyraModule.swift */; };
+		028A600D268734E800EF47BC /* LyraModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028A600B268734E800EF47BC /* LyraModule.swift */; };
+		028A600E268734E800EF47BC /* LyraModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028A600B268734E800EF47BC /* LyraModule.swift */; };
+		028A600F268734E800EF47BC /* LyraModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028A600B268734E800EF47BC /* LyraModule.swift */; };
+		028A6011268738E600EF47BC /* LyraStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028A6010268738E600EF47BC /* LyraStore.swift */; };
+		028A6012268738E600EF47BC /* LyraStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028A6010268738E600EF47BC /* LyraStore.swift */; };
+		028A6013268738E600EF47BC /* LyraStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028A6010268738E600EF47BC /* LyraStore.swift */; };
+		028A6014268738E600EF47BC /* LyraStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028A6010268738E600EF47BC /* LyraStore.swift */; };
+		028A60162687396000EF47BC /* Lyra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028A60152687396000EF47BC /* Lyra.swift */; };
+		028A60172687396000EF47BC /* Lyra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028A60152687396000EF47BC /* Lyra.swift */; };
+		028A60182687396000EF47BC /* Lyra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028A60152687396000EF47BC /* Lyra.swift */; };
+		028A60192687396000EF47BC /* Lyra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028A60152687396000EF47BC /* Lyra.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +85,10 @@
 		028A5FE026872C4D00EF47BC /* LyraSwift-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LyraSwift-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		028A5FF026872C8600EF47BC /* ReSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = ReSwift.xcframework; path = Carthage/Build/ReSwift.xcframework; sourceTree = "<group>"; };
 		028A5FF526872D2200EF47BC /* LyraAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyraAction.swift; sourceTree = "<group>"; };
+		028A6005268734CD00EF47BC /* LyraObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyraObserver.swift; sourceTree = "<group>"; };
+		028A600B268734E800EF47BC /* LyraModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyraModule.swift; sourceTree = "<group>"; };
+		028A6010268738E600EF47BC /* LyraStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyraStore.swift; sourceTree = "<group>"; };
+		028A60152687396000EF47BC /* Lyra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lyra.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +187,7 @@
 		028A5F7826872AEA00EF47BC /* LyraSwift */ = {
 			isa = PBXGroup;
 			children = (
+				028A603626877CD400EF47BC /* Global */,
 				028A5FF426872CA200EF47BC /* Core */,
 				028A5F7926872AEA00EF47BC /* LyraSwift.h */,
 				028A5F7A26872AEA00EF47BC /* Info.plist */,
@@ -195,8 +216,19 @@
 			isa = PBXGroup;
 			children = (
 				028A5FF526872D2200EF47BC /* LyraAction.swift */,
+				028A6005268734CD00EF47BC /* LyraObserver.swift */,
+				028A600B268734E800EF47BC /* LyraModule.swift */,
+				028A6010268738E600EF47BC /* LyraStore.swift */,
+				028A60152687396000EF47BC /* Lyra.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		028A603626877CD400EF47BC /* Global */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Global;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -506,7 +538,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				028A600C268734E800EF47BC /* LyraModule.swift in Sources */,
 				028A5FF626872D2200EF47BC /* LyraAction.swift in Sources */,
+				028A60162687396000EF47BC /* Lyra.swift in Sources */,
+				028A6006268734CD00EF47BC /* LyraObserver.swift in Sources */,
+				028A6011268738E600EF47BC /* LyraStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,7 +558,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				028A600D268734E800EF47BC /* LyraModule.swift in Sources */,
 				028A5FF726872D2200EF47BC /* LyraAction.swift in Sources */,
+				028A60172687396000EF47BC /* Lyra.swift in Sources */,
+				028A6007268734CD00EF47BC /* LyraObserver.swift in Sources */,
+				028A6012268738E600EF47BC /* LyraStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,7 +577,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				028A600E268734E800EF47BC /* LyraModule.swift in Sources */,
 				028A5FF826872D2200EF47BC /* LyraAction.swift in Sources */,
+				028A60182687396000EF47BC /* Lyra.swift in Sources */,
+				028A6008268734CD00EF47BC /* LyraObserver.swift in Sources */,
+				028A6013268738E600EF47BC /* LyraStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,7 +596,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				028A600F268734E800EF47BC /* LyraModule.swift in Sources */,
 				028A6004268730D400EF47BC /* LyraAction.swift in Sources */,
+				028A60192687396000EF47BC /* Lyra.swift in Sources */,
+				028A6009268734CD00EF47BC /* LyraObserver.swift in Sources */,
+				028A6014268738E600EF47BC /* LyraStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
