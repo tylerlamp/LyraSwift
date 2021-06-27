@@ -54,7 +54,7 @@ public typealias LyraObserverSubscriber = LyraObserver & StoreSubscriber
 ///     Lyra.module(\.search).unsubscribe(self)
 /// ```
 ///
-public protocol LyraModule {
+public protocol LyraModuleProtocol {
     associatedtype StateType
     associatedtype Actions: LyraAction
     associatedtype Observer: LyraObserverSubscriber
@@ -62,11 +62,16 @@ public protocol LyraModule {
 }
 
 //MARK: - Identification
-extension LyraModule {
+extension LyraModuleProtocol {
     static var identify: LyraModuleIdentify {
         String(describing: Self.self)
     }
 }
 
+open class LyraBaseModule {
+    public enum submodule {}
+}
+
+public typealias LyraModule = LyraBaseModule & LyraModuleProtocol
 
 

@@ -70,24 +70,29 @@ open class LyraObserver {
     
     required public init() {}
     
-    /// auto cleaner the unuseable subscription
-    /// if you need this function on, put this
-    /// function on the top of the body of function `newState(state:)`:
-    ///
+    
+    /// you can use it like that:
     /// ```
     ///     func newState(state: StateType) {
-    ///         autoCleaner(state)
-    ///         /// your code
+    ///         super.newState(state: state)
+    ///         // your code
     ///     }
     /// ```
-    ///
-    ///
+    /// the only thing it can do now is auto clean
+    /// the subscription. Therefor i will advise use
+    /// it as you build your `LyraObserver`
+    /// - Parameter state: the `stateType` (`ReSwift`)
+    public func newState<stateType>(state: stateType) {
+        autoCleaner(state: state)
+    }
+    
+    /// auto cleaner the unuseable subscription
     /// it will clean the subscription, when `subscriber ` is `nil`
     /// - Parameter state: the `stateType` (`ReSwift`)
-    public func autoCleaner<S>(state: S) {
+    func autoCleaner<stateType>(state: stateType) {
         if subscriber != nil {
             return
         }
-        Lyra.G.removeSubscription(subscriberIdentifier, for: moduleIdentify, with: S.self)
+        Lyra.G.removeSubscription(subscriberIdentifier, for: moduleIdentify, with: stateType.self)
     }
 }

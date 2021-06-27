@@ -72,7 +72,7 @@ public class Lyra {
     ///   - subscriber: the given identifier of subscriber
     /// - Returns:  `true` if the `subscriptions` contains an element that satisfies
     ///   `moduel` and `subscriber`; otherwise, `false`.
-    public static func contains<M: LyraModule>(module: M.Type, of subscriber: SubscriberIdentifier) -> Bool {
+    public static func contains<M: LyraModuleProtocol>(module: M.Type, of subscriber: SubscriberIdentifier) -> Bool {
         Lyra.G.subscriptions[M.identify]?[subscriber] != nil
     }
     
@@ -84,14 +84,14 @@ public class Lyra {
     ///   - subscriber: the given  subscriber
     /// - Returns:  `true` if the `subscriptions` contains an element that satisfies
     ///   `moduel` and `subscriptions`; otherwise, `false`.
-    public static func contains<M: LyraModule>(module: M.Type, of subscriber: AnyObject) -> Bool {
+    public static func contains<M: LyraModuleProtocol>(module: M.Type, of subscriber: AnyObject) -> Bool {
         Self.contains(module: module, of: SubscriberIdentifier(subscriber))
     }
     
     /// Return the subscriptionList of the given `module`
     /// - Parameter module: the given `module`
     /// - Returns: return the `SubscriptionList`
-    func subscriptionList<M: LyraModule>(from module: M.Type) -> SubscriptionList? {
+    func subscriptionList<M: LyraModuleProtocol>(from module: M.Type) -> SubscriptionList? {
         subscriptions[M.identify]
     }
     
@@ -100,7 +100,7 @@ public class Lyra {
     ///   - subscriber: AnyObject
     ///   - module: Specified module
     ///   - Observer: An observer instance which type same as `module.Observer`
-    func subscribe<M: LyraModule>(_ subscriber: AnyObject, for module: M.Type, use observer: M.Observer) {
+    func subscribe<M: LyraModuleProtocol>(_ subscriber: AnyObject, for module: M.Type, use observer: M.Observer) {
         
         let subscription = Subscription(subscriber: subscriber, observer: observer)
         let mIdentifier = M.identify
@@ -121,7 +121,7 @@ public class Lyra {
     /// - Parameters:
     ///   - subscriber: the given  subscriber
     ///   - module: the given module
-    func unsubscribe<M: LyraModule>(_ subscriber: AnyObject, for module: M.Type) {
+    func unsubscribe<M: LyraModuleProtocol>(_ subscriber: AnyObject, for module: M.Type) {
         Lyra.G.removeSubscription(SubscriberIdentifier(subscriber), for: M.self)
     }
     
@@ -131,7 +131,7 @@ public class Lyra {
     /// - Parameter module: the given module
     /// - Returns: `Store<M.StateType>`
     @discardableResult
-    private func addAStoreIfNeed<M: LyraModule>(_ module: M.Type) -> Store<M.StateType> {
+    private func addAStoreIfNeed<M: LyraModuleProtocol>(_ module: M.Type) -> Store<M.StateType> {
         if let store = StoreStore[M.identify]  {
             return store as! Store<M.StateType>
         }
@@ -149,7 +149,7 @@ public class Lyra {
     /// - Parameters:
     ///   - subscriberIdentifier: ObjectIdentifier of the subscriber
     ///   - module: the given module
-    func removeSubscription<M: LyraModule>(_ subscriberIdentifier: SubscriberIdentifier, for module: M.Type) {
+    func removeSubscription<M: LyraModuleProtocol>(_ subscriberIdentifier: SubscriberIdentifier, for module: M.Type) {
         removeSubscription(subscriberIdentifier, for: M.identify, with: M.StateType.self)
     }
     
@@ -172,7 +172,7 @@ public class Lyra {
     
     /// force remove a subscription of the `module`
     /// - Parameter module: the given module
-    func removeSubscription<M: LyraModule>(for module: M.Type) {
+    func removeSubscription<M: LyraModuleProtocol>(for module: M.Type) {
         removeSubscription(for: M.identify)
     }
     
@@ -200,14 +200,14 @@ public class Lyra {
     ///   - subscriber: the given  subscriber
     /// - Returns:  `true` if the `subscriptions` contains an element that satisfies
     ///   `moduel` and `subscriber`; otherwise, `false`.
-    func observer<M: LyraModule>(of module: M.Type, for subscriber: AnyObject) -> M.Observer? {
+    func observer<M: LyraModuleProtocol>(of module: M.Type, for subscriber: AnyObject) -> M.Observer? {
         subscriptions[M.identify]?[SubscriberIdentifier(subscriber)]?.observer as? M.Observer
     }
     
     /// Return a store of the given module(`M`)
     /// - Parameter module: the given module
     /// - Returns: the `Store` of the given module
-    func store<M: LyraModule>(of module: M.Type) -> Store<M.StateType> {
+    func store<M: LyraModuleProtocol>(of module: M.Type) -> Store<M.StateType> {
         guard let store = store(of: M.identify, with: M.StateType.self) else {
             return addAStoreIfNeed(M.self)
         }
@@ -306,9 +306,13 @@ public class LyraDispatcher<M: LyraModule> {
             handler(observer)
         }
     }
+    
+    public static func sub<SUB: LyraModule>(_ keyPath: KeyPath<M.submodule, SUB.Type>) -> LyraDispatcher<SUB>.Type {
+        return LyraDispatcher<SUB>.self
+    }
 }
 
-public class ObserverBox<M: LyraModule> {
+public class ObserverBox<M: LyraModuleProtocol> {
     weak var subscriber: AnyObject?
     public var observer: M.Observer? {
         guard let _ = subscriber else {
