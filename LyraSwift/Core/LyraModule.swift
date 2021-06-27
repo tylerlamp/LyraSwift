@@ -8,8 +8,6 @@
 import ReSwift
 
 public typealias LyraModuleIdentify = String
-public typealias LyraObserverSubscriber = LyraObserver & StoreSubscriber
-
 
 /// When you've defined your `StateType`; `LyraAction`; `LyraObserver`
 /// Now you can assemble them to be a `LyraModule`, like this easy way:

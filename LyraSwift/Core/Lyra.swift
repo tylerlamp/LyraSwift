@@ -41,7 +41,11 @@ public class Lyra {
     /// 1. subscribe/unsubcirbe:
     ///     `Lyra.module(\.search).subscribe(self)`
     /// 2. call action:
-    ///     `Lyra.module(\.search).action.keyword("Hello world")`
+    /// ```
+    ///     Lyra.module(\.search).action {
+    ///         $0.keyword("Hello world")`
+    ///     }
+    /// ```
     /// 3. observe:
     ///     ```
     ///     Lyra.module(\.search).observe.keyword { keyword in
@@ -102,9 +106,12 @@ public class Lyra {
     ///   - Observer: An observer instance which type same as `module.Observer`
     func subscribe<M: LyraModuleProtocol>(_ subscriber: AnyObject, for module: M.Type, use observer: M.Observer) {
         
-        let subscription = Subscription(subscriber: subscriber, observer: observer)
         let mIdentifier = M.identify
         let sIdentifier = SubscriberIdentifier(subscriber)
+        observer.moduleIdentify = mIdentifier
+        observer.subscriberIdentifier = sIdentifier
+        let subscription = Subscription(subscriber: subscriber, observer: observer)
+
         /// Update the subscriptions (aka. dictionary)
         if Lyra.contains(module: mIdentifier) {
             Lyra.G.subscriptions[mIdentifier]![sIdentifier] = subscription

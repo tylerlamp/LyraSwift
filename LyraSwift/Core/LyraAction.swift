@@ -9,7 +9,7 @@
 import ReSwift
 
 /// As a abstract layer above `ReSwift` we need to implement the `Action` anyway.
-/// For the intergration, you should use `LyraAction` instead while
+/// For the integration, you should use `LyraAction` instead while
 /// you building your `Store` with `Lyra`.
 ///
 /// And there are some advises:
