@@ -72,6 +72,9 @@ class SomePage {
     init() {
         /// Auth module
         Lyra.module(\.auth).subscribe(self)
+        
+        /// And you can subscribe multimodule in the same object
+        Lyra.module(\.search).subscribe(self)
     }
     
     /// Then observe new state any where
@@ -81,7 +84,6 @@ class SomePage {
           /// some code
       }
       
-      /// And you can subscribe multimodule in the same object
       Lyra.module(\.search).observe.onKeyword { keyword in
           /// some code
       }
