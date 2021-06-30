@@ -28,6 +28,7 @@ public class Subscription {
 
 /// ` What's Lyra`
 ///
+/// `https://github.com/tylerlamp/LyraSwift`
 ///
 public class Lyra {
     /// Global instance
@@ -144,7 +145,7 @@ public class Lyra {
         }
         /// For this moment, the `state` in the init for `Store` always `nil`
         /// Is it necessity to make it customizable?
-        /// Let me know if you have some issues about it (E-Mail: `mayerdev01@gmail.com`)
+        /// Let me know if you have some issues about it (E-Mail: `mailto:mayerdev01@gmail.com`)
         StoreStore[M.identify] = Store<M.StateType>(reducer: M.reducer(_:_:), state: nil)
         return StoreStore[M.identify] as! Store<M.StateType>
     }
@@ -198,6 +199,8 @@ public class Lyra {
         }
     }
     
+    /// Remove the Store
+    /// - Parameter identify: 
     func clearStore(for identify: LyraModuleIdentify) {
         StoreStore.removeValue(forKey: identify)
     }
