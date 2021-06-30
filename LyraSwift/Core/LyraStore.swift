@@ -22,4 +22,4 @@ import Foundation
 ///     Lyra.module(\.someModule)
 /// ```
 ///
-public struct LyraStore {}
+public enum LyraStore {}

@@ -53,10 +53,10 @@ public typealias LyraModuleIdentify = String
 /// ```
 ///
 public protocol LyraModuleProtocol {
-    associatedtype StateType
+    associatedtype StateType where StateType == Observer.StoreSubscriberStateType
     associatedtype Actions: LyraAction
     associatedtype Observer: LyraObserverSubscriber
-    static func reducer(_ action: Action, _ state: StateType?) -> StateType
+    static func reducer(_ action: LyraAction, _ state: StateType?) -> StateType
 }
 
 //MARK: - Identification

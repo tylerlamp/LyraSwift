@@ -38,4 +38,4 @@ import ReSwift
 ///
 ///
 ///
-public protocol LyraAction: Action {}
+public typealias LyraAction = Action

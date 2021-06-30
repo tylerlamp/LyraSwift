@@ -27,7 +27,7 @@ public class Subscription {
 
 
 /// ` What's Lyra`
-///   
+///
 ///
 public class Lyra {
     /// Global instance
@@ -118,7 +118,7 @@ public class Lyra {
         } else {
             Lyra.G.subscriptions[mIdentifier] = [sIdentifier: subscription]
         }
-        let store = addAStoreIfNeed(M.self) as! Store<M.Observer.StoreSubscriberStateType>
+        let store = addAStoreIfNeed(M.self)
         store.subscribe(observer)
     }
     
@@ -143,9 +143,8 @@ public class Lyra {
             return store as! Store<M.StateType>
         }
         /// For this moment, the `state` in the init for `Store` always `nil`
-        /// Is it necessity to make it cu
-        /// stomizable?
-        /// Tell me if you have some issues about it (E-Mail: `mayerdev01@gmail.com`)
+        /// Is it necessity to make it customizable?
+        /// Let me know if you have some issues about it (E-Mail: `mayerdev01@gmail.com`)
         StoreStore[M.identify] = Store<M.StateType>(reducer: M.reducer(_:_:), state: nil)
         return StoreStore[M.identify] as! Store<M.StateType>
     }
@@ -187,7 +186,6 @@ public class Lyra {
     /// - Parameter identify: the given identify
     func removeSubscription(for identify: LyraModuleIdentify) {
         subscriptions.removeValue(forKey: identify)
-        StoreStore.removeValue(forKey: identify)
     }
     
     /// clean the subscription
@@ -198,6 +196,10 @@ public class Lyra {
             /// then clear the `subscriptions` and `StoreStore`
             removeSubscription(for: identify)
         }
+    }
+    
+    func clearStore(for identify: LyraModuleIdentify) {
+        StoreStore.removeValue(forKey: identify)
     }
     
     /// Return a observer(`M.Observer`) that satisfies the given module(`M`)
@@ -221,27 +223,36 @@ public class Lyra {
         return store
     }
     
+    /// Return a store of the given `identify` and `stateType` if exist
+    /// otherwise return `nil`
+    ///
+    /// - Parameters:
+    ///   - identify: the identify of module (`M`)
+    ///   - stateType: the stateType of module (`M`)
+    /// - Returns:
     func store<S>(of identify: LyraModuleIdentify, with stateType: S.Type) -> Store<S>? {
          StoreStore[identify] as? Store<S>
     }
 }
 
-
-/// TODO: Comment
 public class LyraDispatcher<M: LyraModule> {
+    
+    public static var action: M.Actions.Type { M.Actions.self }
     
     /// An convenience way to call actions from module like that:
     /// ```
-    ///     Lyra.module(\.search).action { actions in
+    ///     Lyra.module(\.search).dispatch { actions in
     ///         actions.placeholder("Hello world!")
     ///     }
     ///
     /// ```
     /// - Parameter closure:
-    public static func action(_ closure: (M.Actions.Type) -> Action ) {
+    @discardableResult
+    public static func dispatch(_ closure: (M.Actions.Type) -> Action ) -> LyraDispatcher<M>.Type {
         Lyra.G
             .store(of: M.self)
             .dispatch(closure(M.Actions.self))
+        return LyraDispatcher<M>.self
     }
     
     /// Return the `Observer` if the `subscription` that satisfies the
@@ -249,11 +260,11 @@ public class LyraDispatcher<M: LyraModule> {
     ///
     /// - Parameter subscriber: the given subscriber
     /// - Returns: Observer
-    public static func observe(_ subscriber: AnyObject) -> M.Observer?  {
+    public static func observe(_ subscriber: AnyObject) -> M.Observer  {
         guard Lyra.contains(module: M.self, of: subscriber) else {
-            return nil
+            fatalError("You have to subscribe first")
         }
-        return Lyra.G.observer(of: M.self, for: subscriber)
+        return Lyra.G.observer(of: M.self, for: subscriber)!
     }
     
     /// Return an `observer` instance from the module (`M`) of subscription that `subscriber` subscribe.
@@ -277,8 +288,19 @@ public class LyraDispatcher<M: LyraModule> {
     
     private static func subscribeNewModule(_ subscriber: AnyObject) {
         let observer = M.Observer()
-        Lyra.G.subscribe(subscriber, for: M.self, use: observer)
         observer.subscriber = subscriber
+        Lyra.G.subscribe(subscriber, for: M.self, use: observer)
+    }
+    
+    /// To allow you get the latest state without any side effect
+    /// - Parameter handler:
+    /// - Returns:
+    public static func current(_ handler: @escaping (M.StateType) -> ()) {
+        handler(Lyra.G.store(of: M.self).state)
+    }
+    
+    public static func clear() {
+        Lyra.G.clearStore(for: M.identify)
     }
     
     /// Find all the Observer(`M.Observer`) that belong to the module
@@ -321,13 +343,14 @@ public class LyraDispatcher<M: LyraModule> {
 
 public class ObserverBox<M: LyraModuleProtocol> {
     weak var subscriber: AnyObject?
-    public var observer: M.Observer? {
+    public var observer: M.Observer {
         guard let _ = subscriber else {
-            return nil
+            return M.Observer.init()
         }
-        return Lyra.G.observer(of: M.self, for: subscriber!)
+        return Lyra.G.observer(of: M.self, for: subscriber!) ?? M.Observer.init()
     }
-    init(subscriber: AnyObject?) {
+    
+    init(subscriber: AnyObject) {
         self.subscriber = subscriber
     }
 }
